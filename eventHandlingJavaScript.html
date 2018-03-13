@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My First Paragraph</p>
+
+<p id="demo"></p>
+
+<script>
+// Event Handling
+
+function openAlert(mess){
+  alert(mess);
+}
+
+</script>
+<a href="JavaScript:void(0)" onClick="openAlert('Hello....open alert');"> Say Hello<br /></a>
+<a href="JavaScript:void(0)" onmouseover="this.style.color='red'"
+  onmouseout="this.style.color='blue'">mouseover <br /></a>
+<input type="text" id="randInput"
+onchange="var dataEntered=document.getElementById('randInput').value;
+ alert('User Typed '+ dataEntered)"/>
+
+<br />
+<br />
+<br />
+
+<form action="#" id="sampForm">
+
+  <input id='charInput' type="text">
+  <p id="keyData">key Data Here</p>
+  <input type="submit" value="Submit">
+  <input type="reset" value="Reset">
+
+</form><br />
+
+<img src="ntt-logo.png">get logo</button><br />
+<button id="logoButton">Get logo</button>
+<input id='mouseInput' type='text' size="30"><br />
+Mouse X: <input type="text" id="mouseX"><br/>
+Mouse Y: <input type="text" id="mouseY"><br/>
+<script>
+  function getChar(event){
+    if(event.which == null){
+      return String.fromCharCode(event.keyCode);
+    }else if(event.which != 0 && event.charCode != 0){
+      return String.fromCharCode(event.which);
+    }else{
+      return null;
+    }
+  }
+
+  document.getElementById('charInput').onkeypress =
+
+    function(event){
+      var char = getChar(event || window.event);
+      if(!char) return false;
+
+      document.getElementById('keyData').innerHTML = char + " Was CLicked";
+      return true;
+    }
+
+    document.getElementById('charInput').onfocus = function(event){
+      document.getElementById('keyData').innerHTML = "Input Gained Focus";
+    }
+
+  document.body.onmousemove = function(e){
+    e = e || window.event;
+
+    var pageX = e.pageX;
+    var pageY = e.pageY;
+
+    if(pageX === undefined){
+      pageX = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+      pageY = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+    }
+
+  document.getElementById('mouseX').value = pageX;
+  document.getElementById('mouseY').value = pageY;
+
+}
+
+
+</script>
+
+</body>
+
+
+</html>
