@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="SampDiv">
+    <p>
+  gibberish divsadfggsavbdfsafsvssdfafas divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+</p>
+</div>
+
+<div>
+
+    Enter Your Name:
+    <input id="name" name="name" type="text" size="30"
+    onblur="isThisFieldEmpty(this, document.getElementById('name_help'))"/>
+    <span id="name_help"></span>
+        
+</div>
+
+
+<script>
+
+
+function editNodeText(regex, input, helpId, helpMessage){
+    if(!regex.test(input)){
+        if(helpId != null)
+            while(helpId.childNodes[0]){
+                helpId.removeChild(helpId.childNodes[0]);
+            }
+        helpId.appendChild(document.createTextNode(helpMessage));
+            
+    }else{
+        if(helpId != null)
+            while(helpId.childNodes[0]){
+                helpId.removeChild(helpId.childNodes[0]);
+            }
+    }
+}
+
+function isThisFieldEmpty(inputField, helpId){
+    return editNodeText(/^[a-zA-Z ]{2,30}$/, inputField.value, helpId,
+     "Please Enter a valud message");
+}
+
+
+
+
+
+</script>
+</body>
+</html>

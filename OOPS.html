@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="SampDiv">
+    <p>
+  gibberish divsadfggsavbdfsafsvssdfafas divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+</p>
+</div>
+
+
+<button id="goToGoogle">goToGoogle</button><br /><br />
+<button id="forwrdPage">FOrward Page</button><br /><br />
+<button id="backPage">Back Page</button><br /><br />
+<button id="reload">Reload</button><br /><br />
+
+<script>
+
+var cust1 = {
+name : "John Smith",
+stree : "123 Main",
+City : "pittsburgh",
+state : "PA",
+email : "Dumb@google.com",
+balance : 2014.2,
+payDownal : function(amtPaid){
+    this.balance -= amtPaid;
+},
+addToBal: function(amtCharged){
+    this.balance += amtCharged;
+}};
+
+document.write("Cstomer Name : ", cust1.name, "<br />");
+document.write("BalPaid : ", cust1.name, "<br />");
+cust1.payDownal(20.50);
+document.write("Balance :", cust1.balance, "<br />");
+
+//////// General Object /////////
+
+function Customer(name, age){
+    this.name = name;
+    this.age = age;
+}
+
+
+
+var cust2 = new Customer("Abhinav", 23, "<br />");
+for (var ele in cust2){
+    document.write(ele," : ", cust2[ele] ,"<br />");
+}
+
+
+</script>
+</body>
+</html>

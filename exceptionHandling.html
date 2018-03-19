@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="SampDiv">
+    <p>
+  gibberish divsadfggsavbdfsafsvssdfafas divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+</p>
+</div>
+
+<script>
+
+
+var custArray = ["Tom", "Abhi", "noob"];
+
+var getCustomer = function(index){
+
+    if(index > custArray.length){
+        throw new RangeError("Index Must be >= 0 and <= " + custArray.length-1);
+    }else{
+        return custArray[index];
+    }
+}
+
+
+try {
+    document.write("customer :", getCustomer(2), "<br />");
+}
+catch(ex){
+    if (ex instanceof RangeError){
+        document.write(ex.message + "<br />");
+    }
+}
+
+</script>
+</body>
+</html>
