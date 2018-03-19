@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="SampDiv">
+  gibberish divsadfggsavbdfsafsvssdfafas divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+</div>
+
+
+<button id="goToGoogle">goToGoogle</button><br /><br />
+<button id="forwrdPage">FOrward Page</button><br /><br />
+<button id="backPage">Back Page</button><br /><br />
+<button id="reload">Reload</button><br /><br />
+
+<script>
+document.write("Current URL: ", window.location.href, "<br />");
+document.write("Current Host: ", window.location.hostname, "<br />");
+document.write("Current path: ", window.location.pathname, "<br />");
+
+
+document.getElementById('goToGoogle').onclick = function(event)
+{
+    window.location.href="http://www.google.com";
+}
+
+document.getElementById('forwrdPage').onclick = function(event)
+{
+    history.forward();
+}
+   
+// document.getElementById('backPage').onclick = function(event)
+// {
+//     history.back();
+// }
+
+document.getElementById('backPage').onclick = function(event)
+{
+    history.go(-2);
+}
+
+document.getElementById('reload').onclick = function(event)
+{
+    window.location.reload();
+}
+
+</script>
+</body>
+</html>

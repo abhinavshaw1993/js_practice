@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="SampDiv">
+    <p>
+  gibberish divsadfggsavbdfsafsvssdfafas divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+  divsadfggsavbdfsafsvssdfafas
+</p>
+</div>
+
+
+<button id="goToGoogle">goToGoogle</button><br /><br />
+<button id="forwrdPage">FOrward Page</button><br /><br />
+<button id="backPage">Back Page</button><br /><br />
+<button id="reload">Reload</button><br /><br />
+
+<script>
+
+var pElements = document.getElementsByTagName('p');
+
+// pElements[0].style.backgroundColor = '#EFDECD';
+
+document.childNodes[1].style.backgroundColor = '#EFDECD'; 
+
+// Getting Attributes
+
+var attributeList = document.getElementById('goToGoogle').attributes;
+
+for (i = 0; i < attributeList.length; i++){
+    document.write("Attribues ", i, " : ", 
+    attributeList[i].nodeName, " : ", attributeList[i].nodeValue);
+}
+
+var paragaph = document.createElement("p");
+
+paragaph.setAttribute("id", "paragraph");
+paragaph.innerHTML = " THis is a new para created by js ";
+
+var SampDiv = document.getElementById("SampDiv");
+
+// SampDiv.appendChild(paragaph);
+SampDiv.insertBefore(paragaph, SampDiv.childNodes[0]);
+
+</script>
+</body>
+</html>
